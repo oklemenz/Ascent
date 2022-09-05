@@ -1,0 +1,12 @@
+{
+    "name": "Ascent",
+    "short_name": "Ascent",
+    "description": "Crashed on a desolate but mysterious planet you find yourself eye to eye with an ancient civilisation. Explore the planet, find powerful upgrades, and uncover its secrets",
+    "icons": [{
+        "src": "img/touch-icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }],
+    "display": "fullscreen",
+    "orientation": "landscape"
+}

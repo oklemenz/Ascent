@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <title>Ascent</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Ascent"/>
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0.0, viewport-fit=contain"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Ascent"/>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/touch-icon-152.png"/>
+    <link rel="apple-touch-icon" href="img/touch-icon-152.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/touch-icon-180.png"/>
+    <link rel="manifest" href="site.webmanifest"/>
+    <link type="text/css" rel="stylesheet" href="css/game.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
+    <style type="text/css">
+        <!--
+        .p8_menu_button{
+            opacity:0.3;
+            padding:4px;
+            display:table;
+            width:24px;
+            height:24px;
+            float:right;
+        }
+
+        @media screen and (min-width:512px) {
+            .p8_menu_button{
+                width:24px; margin-left:12px; margin-bottom:8px;
+            }
+        }
+        .p8_menu_button:hover{
+            opacity:1.0;
+            cursor:pointer;
+        }
+
+        canvas{
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+            border: 0px;
+            cursor: none;
+        }
+
+
+        .p8_start_button{
+            cursor:pointer;
+            background:url("data:image/png;base64,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");
+            -repeat center;
+            -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;
+        }
+
+        .button_gfx{
+            stroke-width:2;
+            stroke: #ffffff;
+            stroke-opacity:0.4;
+            fill-opacity:0.2;
+            fill:black;
+        }
+
+        .button_gfx_icon{
+            stroke-width:3;
+            stroke: #909090;
+            stroke-opacity:0.7;
+            fill:none;
+        }
+
+        -->
+    </style>
+
+</head>
+
+<body>
+<div id="body_0"> <!-- hide this when playing in mobile (p8_touch_detected) so that elements don't affect layout -->
+
+
+    <!-- Add any content above the cart here -->
+
+
+    <div id="p8_frame_0" style="max-width:800px; max-height:800px; margin:auto;"> <!-- double function: limit size, and display only this div for touch devices -->
+        <div id="p8_frame" style="display:flex; width:100%; max-width:100vw; height:100vw; max-height:100vh; margin:auto;">
+
+            <div id="p8_menu_buttons_touch" style="display:none;position:absolute; width:100%; z-index:10; left:0px;">
+                <div class="p8_menu_button" id="p8b_full"  style="float:left;margin-left:10px" onClick="p8_give_focus(); p8_request_fullscreen();"></div>
+                <div class="p8_menu_button" id="p8b_sound" style="float:left;margin-left:10px" onClick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"></div>
+                <div class="p8_menu_button" id="p8b_close" style="float:right; margin-right:10px" onClick="p8_close_cart();"></div>
+            </div>
+
+            <div id="p8_container"
+                 style="margin:auto; display:table;"
+                 onclick="p8_create_audio_context(); p8_run_cart();">
+
+                <div id="p8_start_button" class="p8_start_button" style="width:100%; height:100%; display:flex;">
+                    <img width=80 height=80 style="margin:auto;"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAABpklEQVR42u3au23DQBCEYUXOXIGKcujQXUgFuA0XIKgW90Q9oEAg+Ljd27vd2RsCf058gEDqhofPj+OB6SMCAQlIQAIyAhKQgARkBAQDnM6XSRsB7/2e/tSA0//12fCAKsQX3ntDA4oRFwBRIc0AixE38BAhTQGLEAsBUSDNAXcRhYDRIZsAPlp99VECRoXsDpgN0g0wC6Q7IDpkGEBUyG6A0+vKBtkdMBukG2AWSHdAdMgwgKiQ4QDRIMMCokCGB4wOCQPYFVKw2cABNocUjl6wgE0gFashPKAZpHJ2TQNYBVmxW6cDFENWDv9pAUshCVgJScBKSAISkD9hPkT4GkNAMdzepyj8Kye852EBLe51CZHHWQK4JcThD1SlcHPEYY/0a+A0n6SkGZV6w6WZNb3g4Id1b7hwgGhwYQBR4dwB0eHcALPAdQfMBhcOEA0uDCAqnDsgOpwbYBa4poA/31+rZYFrBriFpwGMCtcEcA9PAhgdzhywBK8EEQXOFFCCtwaIBmcGKMWbI6LCmQBq8R6hw5kAMgISkIAEJCAjIAEJSEBGQI9ukV7lRn9nD+gAAAAASUVORK5CYII="/>
+                </div>
+
+                <div id="p8_playarea" style="display:none; margin:auto;
+				-webkit-user-select:none; -moz-user-select: none; user-select: none; -webkit-touch-callout:none;
+		">
+
+                    <div  id="touch_controls_background"
+                          style=" pointer-events:none; display:none; background-color:#000;
+						 position:fixed; top:0px; left:0px; border:0; width:100vw; height:100vh">
+                        &nbsp
+                    </div>
+
+                    <div style="display:flex; position:relative">
+                        <!-- pointer-events turned off for mobile in p8_update_layout because need for desktop mouse -->
+                        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault();" >
+                        </canvas>
+                        <div class=p8_menu_buttons id="p8_menu_buttons" style="display:none; margin-left:10px;">
+                            <div class="p8_menu_button" style="position:absolute; bottom:125px" id="p8b_controls" onClick="p8_give_focus(); Module.pico8ToggleControlMenu();"></div>
+                            <div class="p8_menu_button" style="position:absolute; bottom:90px" id="p8b_pause" onClick="p8_give_focus(); Module.pico8TogglePaused(); p8_update_layout_hash = -22;"></div>
+                            <div class="p8_menu_button" style="position:absolute; bottom:55px" id="p8b_sound" onClick="p8_give_focus(); p8_create_audio_context(); Module.pico8ToggleSound();"></div>
+                            <div class="p8_menu_button" style="position:absolute; bottom:20px" id="p8b_full" onClick="p8_give_focus(); p8_request_fullscreen();"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- display after first layout update -->
+                    <div  id="touch_controls_gfx"
+                          style=" pointer-events:none; display:table;
+						 position:fixed; top:0px; left:0px; border:0; width:100vw; height:100vh">
+
+                        <img src="" id="controls_right_panel" style="position:absolute; opacity:0.5;">
+                        <img src="" id="controls_left_panel" style="position:absolute;  opacity:0.5;">
+
+
+                    </div> <!-- touch_controls_gfx -->
+
+                    <!-- used for clipboard access & keyboard input; displayed and used by PICO-8 only once needed. can be safely removed if clipboard / key presses not needed. -->
+                    <!-- (needs to be inside p8_playarea so that it still works under Chrome when fullscreened) -->
+                    <!-- 0.2.5: added "display:none"; pico8.js shows on demand to avoid mac osx accent character selector // https://www.lexaloffle.com/bbs/?tid=47743 -->
+
+                    <textarea id="codo_textarea" class="emscripten" style="display:none; position:absolute; left:-9999px; height:0px; overflow:hidden"></textarea>
+
+                </div> <!--p8_playarea -->
+
+            </div> <!-- p8_container -->
+
+        </div> <!-- p8_frame -->
+    </div> <!-- p8_frame_0 size limit -->
+
+    <script type="text/javascript">
+
+      p8_update_layout();
+      p8_update_button_icons();
+
+      var canvas = document.getElementById("canvas");
+      Module = {};
+      Module.canvas = canvas;
+
+      // from @ultrabrite's shell: test if an AudioContext can be created outside of an event callback.
+      // If it can't be created, then require pressing the start button to run the cartridge
+
+      if (p8_autoplay)
+      {
+        var temp_context = new AudioContext();
+        temp_context.onstatechange = function ()
+        {
+          if (temp_context.state=='running')
+          {
+            p8_run_cart();
+            temp_context.close();
+          }
+        };
+      }
+
+      // pointer lock request needs to be inside a canvas interaction event
+      // pico8_state.request_pointer_lock is true when 0x5f2d bit 0 and bit 2 are set -- poke(0x5f2d,0x5)
+      // note on mouse acceleration for future: // https://github.com/w3c/pointerlock/pull/49
+      canvas.addEventListener("click", function()
+      {
+        if (!p8_touch_detected)
+          if (pico8_state.request_pointer_lock)
+            canvas.requestPointerLock();
+      });
+
+    </script>
+    <!-- Add content below the cart here -->
+</div> <!-- body_0 -->
+</body></html>
